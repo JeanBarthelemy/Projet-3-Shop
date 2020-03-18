@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WpfTest_Shop.Shop">
+    <Position X="10.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAIAAEAAAACIIAAIAAQAgAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Shops.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfTest_Shop.Person">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.Order">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAIAAAAAAAAABAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Entities\Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.Magazine">
+    <Position X="5.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAEAAAAAAQAAAAAQAAAAAAAAAACAAAAAEAAA=</HashCode>
+      <FileName>Entities\Magazines.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Editor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.Editor">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Editors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.Logger">
+    <Position X="4" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.Filter">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAAACAAAAAIABAAAAAAAAAAABQAAAAAAAAAE=</HashCode>
+      <FileName>Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.ShopContext">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEAQAAAQAAAAAIUAAAAAQAEAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ShopContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.ShopMagazine">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Entities\ShopMagazine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Shop" />
+      <Property Name="Magazine" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.MagazineOrder">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Entities\MagazineOrder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Magazine" />
+      <Property Name="Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.Authentification">
+    <Position X="6.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.PersonShop">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAAAAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\PersonShop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Person" />
+      <Property Name="Shop" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.OrderShop">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAEAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\OrderShop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Shop" />
+      <Property Name="Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.Country">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.District">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAEAAAAAAABAA=</HashCode>
+      <FileName>Entities\District.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.County">
+    <Position X="15.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Entities\County.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="District" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.City">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAEAAAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\City.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="County" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfTest_Shop.DisplayInformation">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DisplayInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.DatabaseServices">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfTest_Shop.Sha256Tools">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Sha256Tools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

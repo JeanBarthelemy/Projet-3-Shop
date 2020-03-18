@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfTest_Shop.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest_Shop"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="450">
+        <Grid Background="#FFDAD7F9">
+        <Border CornerRadius="20" Margin="20" Background="#FF2C293A">
+            <StackPanel Margin="20">
+                <Label Content="Login" HorizontalAlignment="Center" FontSize="20" Foreground="#FFFBFBFB"/>
+                <Separator/>
+                <Label Content="Username" HorizontalAlignment="Left" FontSize="15" Foreground="#FFFBFBFB"/>
+                <TextBox Name="UserNameTextBox" Height="25"></TextBox>
+                <Label Content="Password" HorizontalAlignment="Left" FontSize="15" Foreground="#FFFBFBFB"/>
+                <PasswordBox Name="PasswordTextBox" Height="25"></PasswordBox>
+                <Button Name="btnEnter" Content="Enter" Margin="100 10" Height="25" Background="#FFDAD7F9" Click="btnEnter_Click"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
