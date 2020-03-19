@@ -8,21 +8,26 @@
         Title="Home" Height="450" Width="800">
     <Grid>
         <DockPanel Background="#FF2C293A">
-        <Menu DockPanel.Dock="Top" Height="30" Background="#FF2C293A" Padding="0 5 0 0">
-            <ComboBox Name="FilterNameComboBox" Width="100">
-                <ComboBoxItem>Country</ComboBoxItem>
-                <ComboBoxItem>District</ComboBoxItem>
-                <ComboBoxItem>County</ComboBoxItem>
-                <ComboBoxItem>City</ComboBoxItem>
-            </ComboBox>
-            <TextBox Name="InfoFilterTextBox" Width="135"/>
+            <Menu DockPanel.Dock="Top" Height="30" Background="#FF2C293A" Padding="0 5 0 0">
+                <ComboBox Name="FilterNameComboBox" Width="100">
+                    <ComboBoxItem>Country</ComboBoxItem>
+                    <ComboBoxItem>District</ComboBoxItem>
+                    <ComboBoxItem>County</ComboBoxItem>
+                    <ComboBoxItem>City</ComboBoxItem>
+                </ComboBox>
+                <TextBox Name="InfoFilterTextBox" Width="135"/>
                 <Button Name="Research_btn" Click="Research_btn_Click" Content="Research"></Button>
-            <Button x:Name="Reset_btn" Click="Reset_btn_Click" Content="Reset"/>
-        </Menu>
-        <Grid Background="#FF2C293A">
-            <ListView Margin="5 5 5 5" Background="#FF3F3C4F" Name="ShopListView" Foreground="BlanchedAlmond">
-                <ListView.View>
-                        
+                <Button x:Name="Reset_btn" Click="Reset_btn_Click" Content="Reset"/>
+                <Button Name="AddShop_btn" Click="AddShop_btn_Click" Content="Add Shop"></Button>
+            </Menu>
+            <Grid Background="#FF2C293A">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="73*"/>
+                    <ColumnDefinition Width="191*"/>
+                </Grid.ColumnDefinitions>
+                <ListView Margin="5 5 5 5" Background="#FF3F3C4F" Name="ShopListView" Foreground="BlanchedAlmond" Grid.ColumnSpan="2">
+                    <ListView.View>
+
                         <GridView>
                             <GridViewColumn Header="Code" Width="120" DisplayMemberBinding="{Binding ShopId}"/>
 
@@ -34,15 +39,15 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                    </GridView>
-                </ListView.View>
+                        </GridView>
+                    </ListView.View>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <EventSetter Event="MouseLeftButtonUp" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-        </Grid>
-    </DockPanel>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

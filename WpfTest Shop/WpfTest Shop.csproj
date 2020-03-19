@@ -148,8 +148,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddShopWindow.xaml.cs">
+      <DependentUpon>AddShopWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AddedShop.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualSettingsWindows.xaml.cs">
+      <DependentUpon>ManualSettingsWindows.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sha256Tools.cs" />
     <Compile Include="Entities\ShopContext.cs" />
@@ -158,6 +165,10 @@
     <Compile Include="ShopInfoWindow.xaml.cs">
       <DependentUpon>ShopInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddShopWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +198,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManualSettingsWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShopInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

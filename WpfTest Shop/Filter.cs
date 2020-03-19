@@ -7,28 +7,33 @@ namespace WpfTest_Shop
 {
     public class Filter
     {
-        public static void FilterByCity(City city)
+        public static List<Shop> FilterByCity(string city)
         {
             using (var context = new ShopContext())
             {
-                var shopList = from s in context.Shops.AsEnumerable()
+                var getCity = (from c in context.City
+                              where c.Name == city
+                              select c).FirstOrDefault();
+
+                var shopList = (from s in context.Shops
                                join c in context.City
                                on s.City.CityId equals c.CityId
-                               where c.CityId == city.CityId
-                               select new { cityName = c.Name, s.ShopId,  shopName = s.Name };
+                               where c.CityId == getCity.CityId
+                               select s).ToList();
 
-                foreach (var Shop in shopList)
-                {
-                    Console.WriteLine(Shop);
-                }
+                return shopList;
             }
         }
 
-        public static void FilterByCountry(Country country)
+        public static List<Shop> FilterByCountry(string country)
         {
             using (var context = new ShopContext())
             {
-                var shopList = from s in context.Shops
+                var getCountry = (from ct in context.Country
+                                   where ct.Name == country
+                                   select ct).FirstOrDefault();
+
+                var shopList = (from s in context.Shops
                                join c in context.City
                                on s.City.CityId equals c.CityId
                                join co in context.County
@@ -37,53 +42,51 @@ namespace WpfTest_Shop
                                on co.District.DistrictId equals di.DistrictId
                                join cou in context.Country
                                on di.Country.CountryId equals cou.CountryId
-                               where cou.CountryId == country.CountryId
-                               select new { CountryName= cou.Name, DistrictName = di.Name, CountyName = co.Name, c.Name, s.ShopId, shopName = s.Name };
+                               where cou.CountryId == getCountry.CountryId
+                               select s).ToList();
 
-                foreach (var shop in shopList)
-                {
-                    Console.WriteLine(shop);
-                }
+                return shopList;
             }
         }
 
-        public static void FilterByDistrict(District district)
+        public static List<Shop> FilterByDistrict(string district)
         {
            using (var context = new ShopContext())
            {
-                var shopList = from s in context.Shops
+                var getDistrict = (from d in context.District
+                               where d.Name == district
+                               select d).FirstOrDefault();
+
+                var shopList = (from s in context.Shops
                                join c in context.City
                                on s.City.CityId equals c.CityId
                                join co in context.County
                                on c.County.CountyId equals co.CountyId
                                join di in context.District
                                on co.District.DistrictId equals di.DistrictId
-                               where di.DistrictId == district.DistrictId
-                               select new { DistrictName = di.Name, CountyName = co.Name, c.Name, s.ShopId, shopName = s.Name };
-
-                foreach(var shop in shopList)
-                {
-                    Console.WriteLine(shop);
-                }
+                               where di.DistrictId == getDistrict.DistrictId
+                               select s).ToList();
+                return shopList;
            }
         }
 
-        public static void FilterByCounty(County county)
+        public static List<Shop> FilterByCounty(string county)
         {
             using (var context = new ShopContext())
             {
-                var shopList = from s in context.Shops
-                            join c in context.City
-                            on s.City.CityId equals c.CityId
-                            join co in context.County
-                            on c.County.CountyId equals co.CountyId
-                            where co.CountyId == county.CountyId
-                            select new { CountyName = co.Name, c.Name, s.ShopId, shopName = s.Name };
+                var getCounty = (from co in context.County
+                               where co.Name == county
+                               select co).FirstOrDefault();
 
-                foreach (var Shop in shopList)
-                {
-                    Console.WriteLine(Shop);
-                }
+                var shopList = (from s in context.Shops
+                                join c in context.City
+                                on s.City.CityId equals c.CityId
+                                join co in context.County
+                                on c.County.CountyId equals co.CountyId
+                                where co.CountyId == getCounty.CountyId
+                                select s).ToList();
+
+                return shopList;
             }
         }
 

@@ -23,30 +23,58 @@ namespace WpfTest_Shop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly DbSet<Shop> _shops;
+        private readonly ShopContext shopContext;
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = _shops;
+            DataContext = shopContext;
             List<Shop> shopList = DisplayInformation.DisplayDefaultShop();
-            ShopListView.ItemsSource = shopList;
+            ShopListView.ItemsSource = shopList;        
             
         }
 
         private void Research_btn_Click(object sender, RoutedEventArgs e)
         {
             
+            if (FilterNameComboBox.Text == "City" && DisplayInformation.GetCity().Contains(InfoFilterTextBox.Text))
+            {
+                List<Shop> shopFilterByCity = Filter.FilterByCity(InfoFilterTextBox.Text);
+                ShopListView.ItemsSource = shopFilterByCity;
+            }
+            else if (FilterNameComboBox.Text == "County" && DisplayInformation.GetCounty().Contains(InfoFilterTextBox.Text))
+            {
+                List<Shop> shopFilterByCounty = Filter.FilterByCounty(InfoFilterTextBox.Text);
+                ShopListView.ItemsSource = shopFilterByCounty;
+            }
+            else if (FilterNameComboBox.Text == "District" && DisplayInformation.GetDistrict().Contains(InfoFilterTextBox.Text))
+            {
+                List<Shop> shopFilterByDistrict = Filter.FilterByDistrict(InfoFilterTextBox.Text);
+                ShopListView.ItemsSource = shopFilterByDistrict;
+            }
+            else if (FilterNameComboBox.Text == "Country" && DisplayInformation.GetCountry().Contains(InfoFilterTextBox.Text))
+            {
+                List<Shop> shopFilterByCountry = Filter.FilterByCountry(InfoFilterTextBox.Text);
+                ShopListView.ItemsSource = shopFilterByCountry;
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("You miswrote.");
+            }
         }
 
         private void Reset_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            List<Shop> shopList = DisplayInformation.DisplayDefaultShop();
+            ShopListView.ItemsSource = shopList;
+            InfoFilterTextBox.Text = String.Empty;
         }
 
         private void ManualSettingsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ManualSettingsWindows manualSettingsWindow = new ManualSettingsWindows();
+            manualSettingsWindow.Owner = this;
+            manualSettingsWindow.Show();
         }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -56,10 +84,15 @@ namespace WpfTest_Shop
             {
                 ShopInfoWindow shopInfoWindow = new ShopInfoWindow();
                 shopInfoWindow.Owner=this;
-                shopInfoWindow.Show();
-                 
-            }
-            
+                shopInfoWindow.Show();                 
+            }            
+        }
+
+        private void AddShop_btn_Click(object sender, RoutedEventArgs e)
+        {
+            AddShopWindow addShopWindow = new AddShopWindow();
+            addShopWindow.Owner = this;
+            addShopWindow.Show();
         }
     }
 }
